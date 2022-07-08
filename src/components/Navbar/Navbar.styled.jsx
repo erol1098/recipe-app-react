@@ -5,7 +5,7 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   left: 0;
-  background-color: grey;
+  background-color: ${({ theme }) => theme.colors.darkPrimary};
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;

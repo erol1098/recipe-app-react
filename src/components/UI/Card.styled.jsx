@@ -41,7 +41,7 @@ export const Image = styled.img`
 
 export const Button = styled.button`
   color: #fff;
-  background-color: green;
+  background-color: ${({ theme }) => theme.colors.darkPrimary};
   border-radius: 0.5rem;
   border: none;
   padding: 0.5rem 1rem;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyledAboutMe = styled.section`
   /* ... */
+  background-color: ${({ theme }) => theme.colors.accentColor};
   width: 50%;
   margin: auto;
   margin-top: 3rem;

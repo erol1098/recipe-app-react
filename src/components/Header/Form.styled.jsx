@@ -7,6 +7,7 @@ const StyledForm = styled.form`
   display: flex;
   justify-content: center;
   gap: 0.3rem;
+  background-color: ${({ theme }) => theme.colors.lightPrimary};
 
   & input {
     font-size: 1.2rem;
@@ -18,7 +19,7 @@ const StyledForm = styled.form`
   }
   & button {
     color: #fff;
-    background-color: green;
+    background-color: ${({ theme }) => theme.colors.darkPrimary};
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1rem;
