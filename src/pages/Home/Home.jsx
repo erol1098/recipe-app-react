@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Card from "../components/UI/Card";
-import Recipes from "../utils/recipes";
-import StyledMain from "../components/UI/Container.styled";
-import Query from "../utils/query-context";
-import Spinner from "../components/UI/Spinner/Spinner";
-import Form from "../components/Header/Form";
+import Card from "../../components/UI/Card/Card";
+import Recipes from "../../utils/recipes";
+import StyledMain from "./Container.styled";
+import Query from "../../utils/query-context";
+import Spinner from "../../components/UI/Spinner/Spinner";
+import Form from "../../components/Header/Form";
 const Home = () => {
   const { meals } = useContext(Recipes);
   const { isLoading } = useContext(Query);

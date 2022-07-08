@@ -1,6 +1,6 @@
 import React from "react";
-import StyledAboutMe from "../components/UI/About.styled";
-import avatar from "../assets/avatar.png";
+import StyledAboutMe from "./About.styled";
+import avatar from "../../assets/avatar.png";
 const About = () => {
   return (
     <StyledAboutMe>
