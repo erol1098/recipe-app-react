@@ -1,11 +1,17 @@
 import React from "react";
-import StyledMain from "../components/UI/Container.styled";
-
+import StyledNotFound from "../components/UI/NotFound.styled";
+import { useNavigate } from "react-router-dom";
 const NotFound = () => {
+  const navigate = useNavigate();
   return (
-    <StyledMain>
-      <div></div>
-    </StyledMain>
+    <StyledNotFound>
+      <h2>404</h2>
+      <h3>Page not found</h3>
+      <div>
+        <button onClick={() => navigate("/")}>Home</button>
+        <button onClick={() => navigate(-1)}>Go Back</button>
+      </div>
+    </StyledNotFound>
   );
 };
 

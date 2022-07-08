@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Query from "../../utils/query-context";
 import useHttp from "../../hooks/useHttp";
-import { StyledForm } from "./Header.styled";
+import StyledForm from "./Form.styled";
 
 const Form = () => {
   const { mealType, setMealType, query, setQuery } = useContext(Query);

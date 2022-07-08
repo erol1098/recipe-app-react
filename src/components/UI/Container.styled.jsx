@@ -6,7 +6,7 @@ const StyledMain = styled.main`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 2rem;
+  padding: 2rem;
 `;
 
 export default StyledMain;

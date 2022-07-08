@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
+
 import Navbar from "./components/Navbar/Navbar";
 // import { ThemeProvider } from "styled-components";
 import About from "./pages/About";
@@ -18,7 +18,7 @@ const App = () => {
       <RecipesProvider>
         <BrowserRouter>
           <Navbar />
-          <Header />
+
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="login" element={<Home/>} /> */}

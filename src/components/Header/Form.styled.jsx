@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-const StyledHeader = styled.header`
-  /* ... */
-`;
-
-export const StyledForm = styled.form`
+const StyledForm = styled.form`
   /* ... */
   padding: 2rem;
-  height: 3rem;
+  height: 7rem;
   display: flex;
   justify-content: center;
   gap: 0.3rem;
@@ -37,4 +33,4 @@ export const StyledForm = styled.form`
   }
 `;
 
-export default StyledHeader;
+export default StyledForm;
