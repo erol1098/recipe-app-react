@@ -1,21 +1,10 @@
-import React from "react";
-import { Form } from "../components/Navbar/Navbar.styled";
-import useHttp from "../hooks/useHttp";
+import React, { useContext } from "react";
+import Recipes from "../utils/recipes";
 
 const Home = () => {
-  const { meals } = useHttp();
+  const { meals } = useContext(Recipes);
   console.log(meals);
-  return (
-    <Form>
-      <input type="text" name="entry" id="entry" />
-      <button type="submit">Search</button>
-      <select>
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </Form>
-  );
+  return <div></div>;
 };
 
 export default Home;

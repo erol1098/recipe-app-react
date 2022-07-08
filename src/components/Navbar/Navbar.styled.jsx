@@ -28,9 +28,4 @@ export const Logo = styled.img`
   width: 100px;
 `;
 
-export const Form = styled.form`
-  /* ... */
-  display: flex;
-`;
-
 export default StyledNav;
