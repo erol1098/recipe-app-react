@@ -13,7 +13,13 @@ const Navbar = () => {
           <NavLink to="about">About</NavLink>
         </li>
         <li>
-          <NavLink to="#">Github</NavLink>
+          <a
+            href="https://github.com/erol1098"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
         </li>
         <li>
           <NavLink to="#">Logout</NavLink>
