@@ -3,7 +3,15 @@ const Query = createContext();
 export const QueryProvider = (props) => {
   const [mealType, setMealType] = useState("breakfast");
   const [query, setQuery] = useState("");
-  const values = { mealType, setMealType, query, setQuery };
+  const [isLoading, setIsLoading] = useState(true);
+  const values = {
+    mealType,
+    setMealType,
+    query,
+    setQuery,
+    isLoading,
+    setIsLoading,
+  };
 
   return <Query.Provider value={values}>{props.children}</Query.Provider>;
 };
