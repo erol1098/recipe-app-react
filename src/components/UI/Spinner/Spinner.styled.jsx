@@ -3,14 +3,10 @@ import styled from "styled-components";
 const StyledSpinner = styled.div`
   /* ... */
   width: 100%;
-  height: 100%;
-  & h3 {
-    text-align: center;
-  }
+  height: 100vh;
   & img {
-    width: 100%;
-    color: inherit;
+    display: block;
+    margin: auto;
   }
 `;
-
 export default StyledSpinner;

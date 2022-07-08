@@ -6,7 +6,6 @@ const StyledHeader = styled.header`
 
 export const StyledForm = styled.form`
   /* ... */
-
   padding: 2rem;
   height: 3rem;
   display: flex;

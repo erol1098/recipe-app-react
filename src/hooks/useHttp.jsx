@@ -13,7 +13,7 @@ const useHttp = () => {
 
   const makeSearch = useCallback(
     async (query, mealType) => {
-      setIsLoading(true);
+      setIsLoading(1);
       setError(null);
       try {
         const res = await axios.get(
@@ -23,7 +23,7 @@ const useHttp = () => {
       } catch (error) {
         setError(error.message || "Something went wrong!");
       }
-      setIsLoading(false);
+      setIsLoading(0);
     },
     [setMeals, setIsLoading]
   );
