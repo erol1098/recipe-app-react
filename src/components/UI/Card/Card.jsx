@@ -3,6 +3,7 @@
 // import Spinner from "./Spinner/Spinner";
 
 import StyledSection, { Button, Image } from "./Card.styled";
+import { useNavigate } from "react-router-dom";
 const Card = (props) => {
   // const { isLoading } = useContext(Query);
   // if (isLoading) {
@@ -12,14 +13,13 @@ const Card = (props) => {
   //     </StyledSection>
   //   );
   // }
-
+  const navigate = useNavigate();
   const { label, image } = props;
   return (
     <StyledSection>
       <h2>{label}</h2>
       <Image src={image} />
-
-      <Button>More</Button>
+      <Button onClick={() => navigate(`details/${label}`)}>More</Button>
     </StyledSection>
   );
 };
