@@ -22,7 +22,7 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <NavLink to="#">Logout</NavLink>
+          <NavLink to="login">Login</NavLink>
         </li>
       </ul>
     </StyledNav>

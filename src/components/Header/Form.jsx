@@ -9,6 +9,7 @@ const Form = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     makeSearch(query, mealType);
+    setQuery("");
   };
   return (
     <StyledForm onSubmit={submitHandler}>

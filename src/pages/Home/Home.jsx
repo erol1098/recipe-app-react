@@ -8,6 +8,21 @@ import Form from "../../components/Header/Form";
 const Home = () => {
   const { meals } = useContext(Recipes);
   const { isLoading } = useContext(Query);
+  if (!meals) {
+    return (
+      <div>
+        <Form />
+        <p style={{ textAlign: "center", fontSize: "2rem", marginTop: "2rem" }}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          repudiandae quisquam magnam omnis porro culpa, ipsam tempore nisi esse
+          aliquid ducimus, quo nihil voluptatum atque amet impedit laboriosam
+          officiis, deserunt totam. Unde quibusdam tenetur exercitationem
+          inventore quidem dolorum eligendi hic atque maiores. Culpa
+          perspiciatis nostrum ducimus optio ad, delectus eaque.
+        </p>
+      </div>
+    );
+  }
   if (meals?.length === 0 && meals) {
     return (
       <div>

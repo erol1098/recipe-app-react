@@ -10,6 +10,7 @@ import { QueryProvider } from "./utils/query-context";
 import { RecipesProvider } from "./utils/recipes";
 import GlobalStyles from "./components/UI/Global/Global.styled";
 import theme from "./components/UI/Global/Theme";
+import Login from "./pages/Login/Login";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -20,7 +21,7 @@ const App = () => {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route path="login" element={<Home/>} /> */}
+              <Route path="login" element={<Login />} />
               <Route path="details">
                 <Route path=":name" element={<Details />} />
               </Route>
