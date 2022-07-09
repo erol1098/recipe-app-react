@@ -12,6 +12,14 @@ const StyledNav = styled.nav`
   align-items: center;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  & div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-family: "Shadows Into Light", cursive;
+  }
   & ul {
     display: flex;
     gap: 2rem;

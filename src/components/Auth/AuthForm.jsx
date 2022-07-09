@@ -33,7 +33,7 @@ const AuthForm = () => {
           setIsLoading(false);
           // console.log(response);
           login(response.data.idToken);
-          navigate("/");
+          navigate(-1);
         } catch (error) {
           setIsLoading(false);
           alert(error.response.data.error.message || "Authentication Failed");
