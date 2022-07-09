@@ -11,26 +11,29 @@ import { RecipesProvider } from "./utils/recipes";
 import GlobalStyles from "./components/UI/Global/Global.styled";
 import theme from "./components/UI/Global/Theme";
 import Login from "./pages/Login/Login";
+import { AutHContextProvider } from "./utils/auth-context";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <QueryProvider>
-        <RecipesProvider>
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="login" element={<Login />} />
-              <Route path="details">
-                <Route path=":name" element={<Details />} />
-              </Route>
-              <Route path="about" element={<About />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </RecipesProvider>
-      </QueryProvider>
+      <AutHContextProvider>
+        <QueryProvider>
+          <RecipesProvider>
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="login" element={<Login />} />
+                <Route path="details">
+                  <Route path=":name" element={<Details />} />
+                </Route>
+                <Route path="about" element={<About />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </RecipesProvider>
+        </QueryProvider>
+      </AutHContextProvider>
     </ThemeProvider>
   );
 };

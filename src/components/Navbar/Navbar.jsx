@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import StyledNav, { Logo } from "./Navbar.styled";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import AuthContext from "../../utils/auth-context";
 const Navbar = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <StyledNav>
       <NavLink to="/">
@@ -22,7 +24,8 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <NavLink to="login">Login</NavLink>
+          {!isLoggedIn && <NavLink to="login">Login</NavLink>}
+          {isLoggedIn && <NavLink to="/">Logout</NavLink>}
         </li>
       </ul>
     </StyledNav>

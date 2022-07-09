@@ -3,9 +3,9 @@ import styled from "styled-components";
 const StyledAuthForm = styled.form`
   /* ... */
   margin: 2rem auto;
-  width: 30rem;
-  height: 30rem;
-  padding: 2rem;
+  width: 33rem;
+  height: 33rem;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
