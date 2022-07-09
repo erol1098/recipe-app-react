@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
     <StyledNav>
       <NavLink to="/">
-        <div>
-          <Logo src={logo} onClick={() => setMeals("")} /> Recipe Master
+        <div onClick={() => setMeals("")}>
+          <Logo src={logo} /> Recipe Master
         </div>
       </NavLink>
       <ul>
@@ -31,8 +31,14 @@ const Navbar = () => {
           {!isLoggedIn && <NavLink to="login">Login</NavLink>}
           {isLoggedIn && (
             <NavLink to="/">
-              {" "}
-              <button onClick={() => logout()}>Logout</button>
+              <button
+                onClick={() => {
+                  logout();
+                  setMeals("");
+                }}
+              >
+                Logout
+              </button>
             </NavLink>
           )}
         </li>

@@ -5,7 +5,7 @@ const StyledSection = styled.section`
   background-color: #eee;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,

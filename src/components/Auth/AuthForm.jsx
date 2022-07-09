@@ -9,8 +9,8 @@ const AuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({ email: "", password: "" });
 
-  const { login } = useContext(AuthContext);
-
+  const { login, isLoggedIn } = useContext(AuthContext);
+  console.log(isLoggedIn);
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
@@ -31,8 +31,9 @@ const AuthForm = () => {
             }
           );
           setIsLoading(false);
-          // console.log(response);
-          login(response.data.idToken);
+          console.log(response);
+          console.log(response.data.expiresIn);
+          login(response.data.idToken, response.data.expiresIn);
           navigate(-1);
         } catch (error) {
           setIsLoading(false);

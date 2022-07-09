@@ -19,7 +19,7 @@ const Card = (props) => {
     <StyledSection>
       <h2>{label}</h2>
       <Image src={image} />
-      <Button onClick={() => navigate(`details/${label}`)}>More</Button>
+      <Button onClick={() => navigate(`/details/${label}`)}>More</Button>
     </StyledSection>
   );
 };

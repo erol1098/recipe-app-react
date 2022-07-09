@@ -15,6 +15,7 @@ import AuthContext, { AutHContextProvider } from "./utils/auth-context";
 import Search from "./pages/Home/Search";
 const App = () => {
   const { isLoggedIn } = useContext(AuthContext);
+  console.log(isLoggedIn);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -28,16 +29,7 @@ const App = () => {
                   <Route path="search" element={<Search />} />
                 </Route>
                 <Route path="login" element={<Login />} />
-                {isLoggedIn && (
-                  <Route path="details">
-                    <Route path=":name" element={<Details />} />
-                  </Route>
-                )}
-                {!isLoggedIn && (
-                  <Route path="details">
-                    <Route path=":name" element={<Login />} />
-                  </Route>
-                )}
+                <Route path="details/:name" element={<Details />} />
                 <Route path="about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

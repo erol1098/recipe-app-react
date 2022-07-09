@@ -20,15 +20,13 @@ const Home = () => {
                 fontSize: "2rem",
                 marginTop: "2rem",
                 alignSelf: "stretch",
+                width: "75%",
+                margin: "auto",
               }}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio repudiandae quisquam magnam omnis porro culpa, ipsam
-              tempore nisi esse aliquid ducimus, quo nihil voluptatum atque amet
-              impedit laboriosam officiis, deserunt totam. Unde quibusdam
-              tenetur exercitationem inventore quidem dolorum eligendi hic atque
-              maiores. Culpa perspiciatis nostrum ducimus optio ad, delectus
-              eaque.
+              Enter a what you have eaten, like "coffee and croissant" or
+              "chicken enchilada" to see how it works. We have accurate data
+              tens of thousands of foods, including international dishes.
             </p>
           </div>
         )}
