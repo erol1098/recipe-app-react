@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,8 +11,10 @@ import { RecipesProvider } from "./utils/recipes";
 import GlobalStyles from "./components/UI/Global/Global.styled";
 import theme from "./components/UI/Global/Theme";
 import Login from "./pages/Login/Login";
-import { AutHContextProvider } from "./utils/auth-context";
+import AuthContext, { AutHContextProvider } from "./utils/auth-context";
+import Search from "./pages/Home/Search";
 const App = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -22,11 +24,20 @@ const App = () => {
             <BrowserRouter>
               <Navbar />
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="login" element={<Login />} />
-                <Route path="details">
-                  <Route path=":name" element={<Details />} />
+                <Route path="/" element={<Home />}>
+                  <Route path="search" element={<Search />} />
                 </Route>
+                <Route path="login" element={<Login />} />
+                {isLoggedIn && (
+                  <Route path="details">
+                    <Route path=":name" element={<Details />} />
+                  </Route>
+                )}
+                {!isLoggedIn && (
+                  <Route path="details">
+                    <Route path=":name" element={<Login />} />
+                  </Route>
+                )}
                 <Route path="about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
