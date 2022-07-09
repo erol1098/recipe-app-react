@@ -4,6 +4,8 @@
 
 import StyledSection, { Button, Image } from "./Card.styled";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../../utils/auth-context";
 const Card = (props) => {
   // const { isLoading } = useContext(Query);
   // if (isLoading) {
@@ -14,12 +16,19 @@ const Card = (props) => {
   //   );
   // }
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AuthContext);
   const { label, image } = props;
   return (
     <StyledSection>
       <h2>{label}</h2>
       <Image src={image} />
-      <Button onClick={() => navigate(`/details/${label}`)}>More</Button>
+      <Button
+        onClick={() =>
+          !isLoggedIn ? navigate("/login") : navigate(`/details/${label}`)
+        }
+      >
+        More
+      </Button>
     </StyledSection>
   );
 };

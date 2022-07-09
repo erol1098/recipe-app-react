@@ -7,11 +7,10 @@ const AuthContext = createContext({
   logout: () => {},
 });
 
-export const AutHContextProvider = (props) => {
+export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(document.cookie.slice(6));
-  // const [token, setToken] = useState(localStorage.getItem("token"));
   const userIsLoggedIn = !!token;
-  // const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+
   const loginHandler = (token, expires) => {
     setToken(token);
     document.cookie = `token=${token}; expires=${new Date(

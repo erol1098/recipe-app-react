@@ -9,8 +9,8 @@ const AuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({ email: "", password: "" });
 
-  const { login, isLoggedIn } = useContext(AuthContext);
-  console.log(isLoggedIn);
+  const { login } = useContext(AuthContext);
+
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };

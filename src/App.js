@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,15 +11,14 @@ import { RecipesProvider } from "./utils/recipes";
 import GlobalStyles from "./components/UI/Global/Global.styled";
 import theme from "./components/UI/Global/Theme";
 import Login from "./pages/Login/Login";
-import AuthContext, { AutHContextProvider } from "./utils/auth-context";
+import { AuthContextProvider } from "./utils/auth-context";
 import Search from "./pages/Home/Search";
+import ProtectedRoute from "./components/Auth/ProtectedRoutes";
 const App = () => {
-  const { isLoggedIn } = useContext(AuthContext);
-  console.log(isLoggedIn);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AutHContextProvider>
+      <AuthContextProvider>
         <QueryProvider>
           <RecipesProvider>
             <BrowserRouter>
@@ -29,14 +28,21 @@ const App = () => {
                   <Route path="search" element={<Search />} />
                 </Route>
                 <Route path="login" element={<Login />} />
-                <Route path="details/:name" element={<Details />} />
+                <Route
+                  path="details/:name"
+                  element={
+                    <ProtectedRoute>
+                      <Details />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
           </RecipesProvider>
         </QueryProvider>
-      </AutHContextProvider>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 };
