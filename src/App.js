@@ -18,9 +18,9 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AuthContextProvider>
-        <QueryProvider>
-          <RecipesProvider>
+      <QueryProvider>
+        <RecipesProvider>
+          <AuthContextProvider>
             <BrowserRouter>
               <Navbar />
               <Routes>
@@ -33,9 +33,9 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
-          </RecipesProvider>
-        </QueryProvider>
-      </AuthContextProvider>
+          </AuthContextProvider>
+        </RecipesProvider>
+      </QueryProvider>
     </ThemeProvider>
   );
 };

@@ -14,54 +14,32 @@ const AuthForm = () => {
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
-
+  let url;
+  isLogin
+    ? (url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB_X3t5rNtIXwO8U96h1FWrBEfS0vNWkU8")
+    : (url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB_X3t5rNtIXwO8U96h1FWrBEfS0vNWkU8");
   const submitHandler = (e) => {
     e.preventDefault();
     const { email, password } = inputs;
-    if (isLogin) {
-      (async () => {
-        try {
-          setIsLoading(true);
-          const response = await axios.post(
-            `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB_X3t5rNtIXwO8U96h1FWrBEfS0vNWkU8`,
-            {
-              email: email,
-              password: password,
-              returnSecureToken: true,
-            }
-          );
-          setIsLoading(false);
-          // console.log(response);
-
-          login(response.data.idToken, response.data.expiresIn);
-          navigate(-1);
-        } catch (error) {
-          setIsLoading(false);
-          alert(error.response.data.error.message || "Authentication Failed");
-        }
-      })();
-    } else {
-      (async () => {
-        try {
-          setIsLoading(true);
-          const response = await axios.post(
-            `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB_X3t5rNtIXwO8U96h1FWrBEfS0vNWkU8`,
-            {
-              email: email,
-              password: password,
-              returnSecureToken: true,
-            }
-          );
-          setIsLoading(false);
-          console.log(response);
-          // alert("Successfully Registered!");
-          navigate(-1);
-        } catch (error) {
-          setIsLoading(false);
-          alert(error.response.data.error.message || "Authentication Failed");
-        }
-      })();
-    }
+    (async () => {
+      try {
+        setIsLoading(true);
+        const response = await axios.post(url, {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        });
+        setIsLoading(false);
+        // console.log(response);
+        login(response.data.idToken, response.data.expiresIn);
+        navigate(-1);
+      } catch (error) {
+        setIsLoading(false);
+        alert(error.response.data.error.message || "Authentication Failed");
+      }
+    })();
   };
 
   const changeHandler = (e) => {
