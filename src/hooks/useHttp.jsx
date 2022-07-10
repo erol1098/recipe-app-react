@@ -10,8 +10,8 @@ const useHttp = () => {
   const { setIsLoading } = useContext(Query);
   const [error, setError] = useState(null);
 
-  const APP_KEY = "b1af8e05eb283a3fda86704ae725708a";
-  const APP_ID = "9bdb283e";
+  const APP_KEY = process.env.REACT_APP_APP_KEY;
+  const APP_ID = process.env.REACT_APP_APP_ID;
 
   useEffect(() => {
     isLoggedIn && localStorage.setItem("savedList", JSON.stringify(meals));
@@ -31,7 +31,7 @@ const useHttp = () => {
       }
       setIsLoading(0);
     },
-    [setMeals, setIsLoading]
+    [setMeals, setIsLoading, APP_KEY, APP_ID]
   );
 
   return { makeSearch, error };
