@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import AuthContext from "../utils/auth-context";
 import Query from "../utils/query-context";
 import Recipes from "../utils/recipes";
@@ -10,8 +10,10 @@ const useHttp = () => {
   const { setIsLoading } = useContext(Query);
   const [error, setError] = useState(null);
 
-  const APP_KEY = useMemo(() => process.env.REACT_APP_APP_KEY, []);
-  const APP_ID = useMemo(() => process.env.REACT_APP_APP_ID, []);
+  // const APP_KEY = useMemo(() => process.env.REACT_APP_APP_KEY, []);
+  // const APP_ID = useMemo(() => process.env.REACT_APP_APP_ID, []);
+  const APP_KEY = "b1af8e05eb283a3fda86704ae725708a";
+  const APP_ID = "9bdb283e";
 
   useEffect(() => {
     isLoggedIn && localStorage.setItem("savedList", JSON.stringify(meals));
