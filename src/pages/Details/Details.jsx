@@ -8,9 +8,8 @@ const Details = () => {
   const navigate = useNavigate();
   const { meals } = useContext(Recipes);
   const { name } = useParams();
-  if (!meals) return <Navigate to="/" />;
-  const meal = meals.find((meal) => meal.recipe.label === name).recipe;
-  console.log(meal);
+  if (!meals) return <Navigate to="notfound" />;
+  const meal = meals.find((meal) => meal.recipe.label === name)?.recipe;
   return (
     <StyledDetail>
       <div>

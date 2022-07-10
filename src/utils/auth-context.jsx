@@ -19,6 +19,7 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("willExpire");
+    localStorage.removeItem("savedList");
   };
   const values = {
     token: token,
