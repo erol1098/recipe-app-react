@@ -8,7 +8,6 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({ email: "", password: "" });
-
   const { login } = useContext(AuthContext);
 
   const switchAuthModeHandler = () => {

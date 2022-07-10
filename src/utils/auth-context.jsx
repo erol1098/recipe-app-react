@@ -7,21 +7,19 @@ const AuthContext = createContext({
 });
 
 export const AuthContextProvider = (props) => {
-  const [token, setToken] = useState(document.cookie.slice(6));
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const userIsLoggedIn = !!token;
-
   const loginHandler = (token, expires) => {
     setToken(token);
-    document.cookie = `token=${token}; expires=${new Date(
-      new Date().getTime() + +expires * 1000
-    )}`;
+    localStorage.setItem("token", token);
+    localStorage.setItem("willExpire", expires);
     setTimeout(logoutHandler, expires * 1000);
   };
   const logoutHandler = () => {
     setToken(null);
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    localStorage.removeItem("token");
+    localStorage.removeItem("willExpire");
   };
-
   const values = {
     token: token,
     isLoggedIn: userIsLoggedIn,
