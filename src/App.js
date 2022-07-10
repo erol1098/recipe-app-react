@@ -13,7 +13,7 @@ import theme from "./components/UI/Global/Theme";
 import Login from "./pages/Login/Login";
 import { AuthContextProvider } from "./utils/auth-context";
 import Search from "./pages/Home/Search";
-import ProtectedRoute from "./components/Auth/ProtectedRoutes";
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -28,14 +28,7 @@ const App = () => {
                   <Route path="search" element={<Search />} />
                 </Route>
                 <Route path="login" element={<Login />} />
-                <Route
-                  path="details/:name"
-                  element={
-                    <ProtectedRoute>
-                      <Details />
-                    </ProtectedRoute>
-                  }
-                />
+                <Route path="details/:name" element={<Details />} />
                 <Route path="about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

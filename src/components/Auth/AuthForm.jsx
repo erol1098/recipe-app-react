@@ -31,8 +31,8 @@ const AuthForm = () => {
             }
           );
           setIsLoading(false);
-          console.log(response);
-          console.log(response.data.expiresIn);
+          // console.log(response);
+
           login(response.data.idToken, response.data.expiresIn);
           navigate(-1);
         } catch (error) {
@@ -54,7 +54,8 @@ const AuthForm = () => {
           );
           setIsLoading(false);
           console.log(response);
-          alert("Successfully Registered!");
+          // alert("Successfully Registered!");
+          navigate(-1);
         } catch (error) {
           setIsLoading(false);
           alert(error.response.data.error.message || "Authentication Failed");
