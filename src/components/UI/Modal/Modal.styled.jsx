@@ -15,12 +15,13 @@ const StyledModal = styled.div`
   & .modal {
     position: fixed;
     top: 30vh;
-    left: 25%;
-    width: 50%;
+    left: 35%;
+    width: 25%;
     z-index: 100;
     margin: auto;
     overflow: hidden;
     background-color: ${({ theme }) => theme.colors.lightPrimary};
+    border-radius: 0.5rem;
   }
 
   & .header {

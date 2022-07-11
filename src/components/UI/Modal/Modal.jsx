@@ -15,7 +15,7 @@ const Modal = (props) => {
         </div>
         <div className="actions">
           <button type="button" onClick={props.onConfirm}>
-            Understand
+            Ok
           </button>
         </div>
       </section>
