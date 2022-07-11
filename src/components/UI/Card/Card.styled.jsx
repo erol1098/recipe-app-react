@@ -17,7 +17,7 @@ const StyledSection = styled.section`
   & h2 {
     text-align: center;
     font-size: 1.2rem;
-    height: 20%;
+    height: 30%;
   }
   &:hover {
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
