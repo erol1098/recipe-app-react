@@ -17,6 +17,7 @@ const StyledSection = styled.section`
   & h2 {
     text-align: center;
     font-size: 1.2rem;
+    height: 20%;
   }
   &:hover {
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
@@ -28,9 +29,16 @@ const StyledSection = styled.section`
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
+  & .image-wrapper {
+    /* width: 15rem; */
+    height: 208px;
+  }
+  & .button-wrapper {
+    height: 10%;
+  }
 `;
 
-export const Image = styled.img`
+export const Image1 = styled.img`
   /* ... */
   width: 100%;
   border-radius: 0.3rem;

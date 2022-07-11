@@ -12,8 +12,9 @@ body {
 font-family: 'Permanent Marker', cursive;
 font-weight:bold;
 letter-spacing:0.1rem;
-  color: ${({ theme }) => theme.colors.primaryText};
-  background-color: ${({ theme }) => theme.colors.accentColor};
+color: ${({ theme }) => theme.colors.primaryText};
+background-color: ${({ theme }) => theme.colors.accentColor};
+min-width:646px;
 
 }
 
