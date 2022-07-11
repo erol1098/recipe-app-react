@@ -51,26 +51,26 @@ const AuthForm = () => {
   return (
     <StyledAuthForm onSubmit={submitHandler}>
       <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+      <label htmlFor="email">Your Email</label>
       <div>
-        <label htmlFor="email">Your Email</label>
-        <br />
         <input
           type="email"
           id="email"
           required
           value={inputs.email}
           onChange={changeHandler}
+          placeholder="Enter Your Mail..."
         />
       </div>
+      <label htmlFor="password">Your Password</label>
       <div>
-        <label htmlFor="password">Your Password</label>
-        <br />
         <input
           type="password"
           id="password"
           required
           value={inputs.password}
           onChange={changeHandler}
+          placeholder="Enter Your Password"
         />
       </div>
       <div>
