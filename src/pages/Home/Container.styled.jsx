@@ -8,6 +8,11 @@ const StyledMain = styled.main`
   gap: 2rem;
   padding: 2rem;
   background-color: ${({ theme }) => theme.colors.accentColor};
+  & img {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
 `;
 
 export default StyledMain;

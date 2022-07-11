@@ -30,17 +30,17 @@ const StyledSection = styled.section`
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
   & .image-wrapper {
-    /* width: 15rem; */
     height: 208px;
+    width: 208px;
   }
   & .button-wrapper {
     height: 10%;
   }
 `;
-
 export const Image1 = styled.img`
   /* ... */
   width: 100%;
+  height: 100%;
   border-radius: 0.3rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;

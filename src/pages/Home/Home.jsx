@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-
 import Recipes from "../../utils/recipes";
-
 import Form from "../../components/Header/Form";
 import { Outlet } from "react-router-dom";
 import StyledMain from "./Container.styled";
-
+import background from "../../assets/background.jpg";
 const Home = () => {
   const { meals } = useContext(Recipes);
 
@@ -29,6 +27,7 @@ const Home = () => {
               "chicken enchilada" to see how it works. We have accurate data
               tens of thousands of foods, including international dishes.
             </p>
+            <img src={background} alt="" />
           </div>
         )}
         {meals && <Outlet />}
