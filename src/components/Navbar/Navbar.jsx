@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import StyledNav, { Logo } from "./Navbar.styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import AuthContext from "../../utils/auth-context";
 import Recipes from "../../utils/recipes";
 const Navbar = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
   const { setMeals } = useContext(Recipes);
+  const navigate = useNavigate();
   return (
     <StyledNav>
       <NavLink to="/">
@@ -30,16 +31,15 @@ const Navbar = () => {
         <li>
           {!isLoggedIn && <NavLink to="login">Login</NavLink>}
           {isLoggedIn && (
-            <NavLink to="/">
-              <button
-                onClick={() => {
-                  logout();
-                  setMeals("");
-                }}
-              >
-                Logout
-              </button>
-            </NavLink>
+            <button
+              onClick={() => {
+                navigate("/goodbye");
+                logout();
+                setMeals("");
+              }}
+            >
+              Logout
+            </button>
           )}
         </li>
       </ul>

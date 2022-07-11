@@ -14,6 +14,7 @@ import Login from "./pages/Login/Login";
 import { AuthContextProvider } from "./utils/auth-context";
 import Search from "./pages/Home/Search";
 import Layout from "./components/UI/Layout/Layout";
+import GoodBye from "./components/UI/GoodBye";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
                   <Route path="login" element={<Login />} />
                   <Route path="details/:name" element={<Details />} />
                   <Route path="about" element={<About />} />
+                  <Route path="goodbye" element={<GoodBye />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
