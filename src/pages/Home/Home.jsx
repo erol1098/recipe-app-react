@@ -5,6 +5,7 @@ import Recipes from "../../utils/recipes";
 import Form from "../../components/Header/Form";
 import { Outlet } from "react-router-dom";
 import StyledMain from "./Container.styled";
+
 const Home = () => {
   const { meals } = useContext(Recipes);
 

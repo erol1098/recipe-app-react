@@ -13,6 +13,7 @@ import theme from "./components/UI/Global/Theme";
 import Login from "./pages/Login/Login";
 import { AuthContextProvider } from "./utils/auth-context";
 import Search from "./pages/Home/Search";
+import Layout from "./components/UI/Layout";
 
 const App = () => {
   return (
@@ -21,18 +22,20 @@ const App = () => {
       <QueryProvider>
         <RecipesProvider>
           <AuthContextProvider>
-            <BrowserRouter>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />}>
-                  <Route path="search" element={<Search />} />
-                </Route>
-                <Route path="login" element={<Login />} />
-                <Route path="details/:name" element={<Details />} />
-                <Route path="about" element={<About />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
+            <Layout>
+              <BrowserRouter>
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Home />}>
+                    <Route path="search" element={<Search />} />
+                  </Route>
+                  <Route path="login" element={<Login />} />
+                  <Route path="details/:name" element={<Details />} />
+                  <Route path="about" element={<About />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </Layout>
           </AuthContextProvider>
         </RecipesProvider>
       </QueryProvider>
