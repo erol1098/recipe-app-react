@@ -18,7 +18,6 @@ const Card = (props) => {
   // }
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(AuthContext);
-
   const { label, image } = props;
   return (
     <StyledSection>

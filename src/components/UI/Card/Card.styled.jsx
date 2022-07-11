@@ -11,13 +11,12 @@ const StyledSection = styled.section`
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-
   padding: 1rem;
   border-radius: 0.3rem;
   width: 15rem;
   & h2 {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   &:hover {
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
@@ -47,6 +46,7 @@ export const Button = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
+  font-family: "Permanent Marker", cursive;
 `;
 
 export default StyledSection;

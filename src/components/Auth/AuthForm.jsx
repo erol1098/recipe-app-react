@@ -50,7 +50,7 @@ const AuthForm = () => {
 
   return (
     <StyledAuthForm onSubmit={submitHandler}>
-      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+      <h2>{isLogin ? "Login" : "Sign Up"}</h2>
       <div>
         <label htmlFor="email">Your Email</label>
         <br />

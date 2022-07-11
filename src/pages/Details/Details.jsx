@@ -18,13 +18,23 @@ const Details = () => {
           {meal.cuisineType[0].replace(
             meal.cuisineType[0][0],
             meal.cuisineType[0][0].toUpperCase()
-          )}
+          )}{" "}
           Cuisine
         </p>
       </div>
       <article>
-        <img src={meal.image} alt="" />
+        <img src={meal.image} alt="dish" />
         <ul>
+          <li
+            style={{
+              textDecoration: "underline",
+              textAlign: "center",
+              fontSize: "1.3rem",
+              marginBottom: "1rem",
+            }}
+          >
+            Ingredients
+          </li>
           {meal.ingredientLines.map((line, i) => (
             <li key={i}>
               {i + 1} - {line}

@@ -20,11 +20,12 @@ const StyledNotFound = styled.main`
   }
   & button {
     color: #fff;
-    background-color: ${({ theme }) => theme.colors.darkPrimary};
+    background-color: ${({ theme }) => theme.colors.defaultPrimary};
     border-radius: 0.5rem;
     border: none;
     padding: 1rem 2rem;
     font-size: 1.2rem;
+    font-family: "Permanent Marker", cursive;
     cursor: pointer;
   }
   & div :nth-child(2) {

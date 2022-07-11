@@ -7,7 +7,7 @@ const StyledMain = styled.main`
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
-  background-color: ${({ theme }) => theme.colors.lightPrimary};
+  background-color: ${({ theme }) => theme.colors.accentColor};
 `;
 
 export default StyledMain;
