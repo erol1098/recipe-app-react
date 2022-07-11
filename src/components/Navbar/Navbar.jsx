@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import StyledNav, { Logo } from "./Navbar.styled";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import AuthContext from "../../utils/auth-context";
 import Recipes from "../../utils/recipes";
 const Navbar = () => {

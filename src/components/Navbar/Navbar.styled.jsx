@@ -55,6 +55,7 @@ const StyledNav = styled.nav`
 export const Logo = styled.img`
   /* ... */
   width: 64px;
+  border-radius: 5rem;
 `;
 
 export default StyledNav;
