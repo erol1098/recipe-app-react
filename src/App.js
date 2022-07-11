@@ -13,7 +13,7 @@ import theme from "./components/UI/Global/Theme";
 import Login from "./pages/Login/Login";
 import { AuthContextProvider } from "./utils/auth-context";
 import Search from "./pages/Home/Search";
-import Layout from "./components/UI/Layout";
+import Layout from "./components/UI/Layout/Layout";
 
 const App = () => {
   return (
