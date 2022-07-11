@@ -25,18 +25,26 @@ const StyledAuthForm = styled.form`
   & div:last-child {
     margin-top: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
   }
   & button {
-    color: #fff;
-    background-color: ${({ theme }) => theme.colors.darkPrimary};
     border-radius: 0.5rem;
     border: none;
     padding: 1rem;
     font-size: 1rem;
     font-family: "Permanent Marker", cursive;
     cursor: pointer;
+  }
+  & button[type="submit"] {
+    color: #fff;
+    background-color: ${({ theme }) => theme.colors.darkPrimary};
+  }
+  & button[type="button"] {
+    border: 1px solid ${({ theme }) => theme.colors.darkPrimary};
+    color: ${({ theme }) => theme.colors.darkPrimary};
+    background-color: inherit;
   }
   & h2 {
     margin-bottom: 1rem;
