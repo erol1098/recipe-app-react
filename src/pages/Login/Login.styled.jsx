@@ -9,7 +9,7 @@ const StyledLogin = styled.section`
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
-  padding-top: 1rem;
+  padding: 1rem 0;
 `;
 
 export default StyledLogin;
