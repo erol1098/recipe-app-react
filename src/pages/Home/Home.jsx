@@ -6,7 +6,6 @@ import StyledMain from "./Container.styled";
 import background from "../../assets/background.jpg";
 const Home = () => {
   const { meals } = useContext(Recipes);
-
   return (
     <>
       <Form />
@@ -27,7 +26,7 @@ const Home = () => {
               "chicken enchilada" to see how it works. We have accurate data
               tens of thousands of foods, including international dishes.
             </p>
-            <img src={background} alt="" />
+            <img src={background} alt="dish-table" />
           </div>
         )}
         {meals && <Outlet />}
