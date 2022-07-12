@@ -20,7 +20,7 @@ const StyledAuthForm = styled.form`
     margin: 1rem 0;
     font-size: 1.1rem;
     text-indent: 1rem;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
   }
   & div:last-child {
     margin-top: 2rem;
@@ -34,7 +34,7 @@ const StyledAuthForm = styled.form`
     border: none;
     padding: 1rem;
     font-size: 1rem;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
   }
   & button[type="submit"] {

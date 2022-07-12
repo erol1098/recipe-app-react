@@ -52,7 +52,7 @@ const StyledModal = styled.div`
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
   }
 `;
 
