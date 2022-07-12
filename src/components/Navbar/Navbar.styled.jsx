@@ -36,17 +36,26 @@ const StyledNav = styled.nav`
     color: #fff;
     text-decoration: none;
   }
+
+  & a:hover {
+    color: ${({ theme }) => theme.colors.defaultPrimary};
+  }
   & button {
     color: #fff;
     background-color: ${({ theme }) => theme.colors.defaultPrimary};
     border-radius: 0.5rem;
-    border: none;
+    border: 1px solid ${({ theme }) => theme.colors.defaultPrimary};
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
     letter-spacing: 0.1rem;
     cursor: pointer;
     font-weight: bold;
+  }
+  & button:hover {
+    background-color: #fff;
+    color: ${({ theme }) => theme.colors.defaultPrimary};
+    border: 1px solid ${({ theme }) => theme.colors.defaultPrimary};
   }
 `;
 

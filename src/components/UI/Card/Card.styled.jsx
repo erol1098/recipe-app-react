@@ -55,6 +55,12 @@ export const Button = styled.button`
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  border: 1px solid ${({ theme }) => theme.colors.darkPrimary};
+  &:hover {
+    background-color: #fff;
+    color: ${({ theme }) => theme.colors.darkPrimary};
+    border: 1px solid ${({ theme }) => theme.colors.darkPrimary};
+  }
 `;
 
 export default StyledSection;

@@ -14,24 +14,39 @@ const StyledNotFound = styled.main`
   }
   & h3 {
     font-size: 3rem;
+    margin-bottom: 2rem;
   }
   & div {
-    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
   }
   & button {
     color: #fff;
-    background-color: ${({ theme }) => theme.colors.defaultPrimary};
     border-radius: 0.5rem;
-    border: none;
     padding: 1rem 2rem;
     font-size: 1.2rem;
-    font-family: "Permanent Marker", cursive;
+    border: 1px solid black;
     cursor: pointer;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
   }
-  & div :nth-child(2) {
+  & .home {
+    background-color: ${({ theme }) => theme.colors.defaultPrimary};
+    border-color: ${({ theme }) => theme.colors.defaultPrimary};
+    color: #fff;
+  }
+  & .home:hover {
+    color: ${({ theme }) => theme.colors.defaultPrimary};
+    background-color: #fff;
+  }
+  & .back {
     background-color: ${({ theme }) => theme.colors.warningColor};
+    border-color: ${({ theme }) => theme.colors.warningColor};
     color: black;
-    margin-left: 2rem;
+  }
+  & .back:hover {
+    color: ${({ theme }) => theme.colors.warningColor};
+    background-color: #fff;
   }
 `;
 

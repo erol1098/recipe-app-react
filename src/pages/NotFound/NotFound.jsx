@@ -9,9 +9,13 @@ const NotFound = () => {
     <StyledNotFound>
       <h2>404</h2>
       <h3>Page not found</h3>
-      <div>
-        <button onClick={() => navigate("/")}>Home</button>
-        <button onClick={() => navigate(-1)}>Go Back</button>
+      <div className="btn-wrapper">
+        <button className="home" onClick={() => navigate("/")}>
+          Home
+        </button>
+        <button className="back" onClick={() => navigate(-1)}>
+          Go Back
+        </button>
       </div>
     </StyledNotFound>
   );

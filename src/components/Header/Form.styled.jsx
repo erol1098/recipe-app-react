@@ -27,6 +27,12 @@ const StyledForm = styled.form`
     cursor: pointer;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
+    border: 1px solid ${({ theme }) => theme.colors.defaultPrimary};
+  }
+  & button:hover {
+    background-color: #fff;
+    color: ${({ theme }) => theme.colors.defaultPrimary};
+    border: 1px solid ${({ theme }) => theme.colors.defaultPrimary};
   }
   & select {
     padding: 0.5rem;
