@@ -34,8 +34,8 @@ const Navbar = () => {
             <button
               onClick={() => {
                 navigate("/goodbye");
-                logout();
                 setMeals("");
+                logout();
               }}
             >
               Logout
