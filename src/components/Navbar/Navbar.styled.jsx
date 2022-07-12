@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
   align-items: center;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   font-weight: light;
   & div {
     display: flex;
@@ -23,9 +23,7 @@ const StyledNav = styled.nav`
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
       rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     padding: 0.3rem 1rem;
-    /* background-color: ${({ theme }) => theme.colors.defaultPrimary}; */
     border-radius: 0.3rem;
-    /* color: ${({ theme }) => theme.colors.primaryText}; */
     color: #fff;
   }
   & ul {
@@ -45,9 +43,9 @@ const StyledNav = styled.nav`
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.1rem;
     cursor: pointer;
-    letter-spacing: 0.2rem;
     font-weight: bold;
   }
 `;

@@ -4,12 +4,11 @@ const theme = {
     defaultPrimary: "#708F39",
     lightPrimary: "#78BFB8",
     textPrimary: "#ffffff",
-    accentColor: "#F2EFDC",
+    accentColor: "#eee",
     primaryText: "#212121",
     secondaryText: "#757575",
-    dividerColor: "#eee",
+    dividerColor: "#e6e6e6",
     warningColor: "#E9A71A",
-    backgroundColor: "#780505",
   },
 };
 export default theme;

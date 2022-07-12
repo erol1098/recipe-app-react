@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 const StyledSection = styled.section`
   /* ... */
-  background-color: #eee;
+  background-color: ${({ theme }) => theme.colors.dividerColor};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
-    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
-    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   padding: 1rem;
   border-radius: 0.3rem;
   width: 15rem;
@@ -54,7 +53,8 @@ export const Button = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 `;
 
 export default StyledSection;

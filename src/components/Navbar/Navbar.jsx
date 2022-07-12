@@ -21,11 +21,11 @@ const Navbar = () => {
         </li>
         <li>
           <a
-            href="https://github.com/erol1098"
+            href="https://github.com/erol1098/recipe-app-react"
             target="_blank"
             rel="noreferrer"
           >
-            Github
+            GitHub
           </a>
         </li>
         <li>

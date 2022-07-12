@@ -13,7 +13,6 @@ const StyledForm = styled.form`
     font-size: 1.2rem;
     text-indent: 1rem;
     border-radius: 0.5rem;
-    font-family: "Permanent Marker", cursive;
   }
   & input:focus {
     outline: none;
@@ -26,14 +25,15 @@ const StyledForm = styled.form`
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
   }
   & select {
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 1.2rem;
     cursor: pointer;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
   }
 `;
 

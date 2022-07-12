@@ -56,7 +56,7 @@ const StyledDetail = styled.section`
     padding: 1rem;
     font-size: 1rem;
     font-weight: bold;
-    font-family: "Permanent Marker", cursive;
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.warningColor};
     color: ${({ theme }) => theme.colors.primaryText};
