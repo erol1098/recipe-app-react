@@ -11,7 +11,7 @@ const Modal = (props) => {
         </header>
 
         <div className="content">
-          <p>{props.message}</p>
+          <p>{props.message.replace("_", " ")}</p>
         </div>
         <div className="actions">
           <button type="button" onClick={props.onConfirm}>

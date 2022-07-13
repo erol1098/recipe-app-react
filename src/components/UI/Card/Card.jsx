@@ -1,7 +1,3 @@
-// import React, { useContext } from "react";
-// import Query from "../../utils/query-context";
-// import Spinner from "./Spinner/Spinner";
-
 import StyledSection, { Button, Image1 } from "./Card.styled";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
@@ -9,14 +5,6 @@ import AuthContext from "../../../utils/auth-context";
 import Spinner from "../Spinner/Spinner";
 
 const Card = (props) => {
-  // const { isLoading } = useContext(Query);
-  // if (isLoading) {
-  //   return (
-  //     <StyledSection>
-  //       <Spinner />
-  //     </StyledSection>
-  //   );
-  // }
   const [isLoading, setIsLoading] = useState(false);
 
   function asyncImageLoader(url) {
