@@ -12,7 +12,6 @@ const useHttp = () => {
 
   const APP_KEY = process.env.REACT_APP_APP_KEY;
   const APP_ID = process.env.REACT_APP_APP_ID;
-
   useEffect(() => {
     isLoggedIn && localStorage.setItem("savedList", JSON.stringify(meals));
   }, [meals, isLoggedIn]);
