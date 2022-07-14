@@ -6,7 +6,7 @@ const StyledMain = styled.main`
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: ${({ theme }) => theme.colors.accentColor};
 `;
 export const Image = styled.img`
@@ -17,14 +17,12 @@ export const Image = styled.img`
     display: none;
   }
 `;
-
 export const Content = styled.p`
   text-align: center;
   font-size: 2rem;
-  margin-top: 2rem;
-  margin: auto;
+  margin: 2rem auto;
   @media (max-width: ${({ theme }) => theme.screen.sm}) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;
 export default StyledMain;

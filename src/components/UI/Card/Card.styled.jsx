@@ -19,8 +19,8 @@ const StyledSection = styled.section`
     height: 30%;
   }
   &:hover {
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px inset,
+      rgba(0, 0, 0, 0.24) 0px 1px 2px inset;
   }
   & img {
     width: 100%;
@@ -38,9 +38,9 @@ const StyledSection = styled.section`
   @media (max-width: ${({ theme }) => theme.screen.sm}) {
     width: 20rem;
     height: 27rem;
-    padding: 2rem 0;
     & > h2 {
       height: auto;
+      padding: 0 0.5rem;
     }
   }
 `;

@@ -2,13 +2,8 @@ import styled from "styled-components";
 
 const StyledModal = styled.div`
   /* ... */
-
-  /* position: fixed;
-  top: 30vh;
-  left: 35%;
-  width: 25%; */
   position: relative;
-  top: 3rem;
+  top: 22vh;
   left: 0;
   max-width: 30rem;
   z-index: 100;
@@ -31,11 +26,13 @@ const StyledModal = styled.div`
     padding: 1rem;
     font-size: 1.3rem;
   }
-
   & .actions {
     padding: 1rem;
     display: flex;
     justify-content: flex-end;
+    @media (max-width: ${({ theme }) => theme.screen.sm}) {
+      justify-content: center;
+    }
   }
   & button {
     color: #fff;

@@ -11,10 +11,11 @@ const Modal = (props) => {
         <div className="content">
           <p>{props.message.replace("_", " ")}</p>
         </div>
-
-        <button type="button" onClick={props.onConfirm}>
-          Ok
-        </button>
+        <div className="actions">
+          <button type="button" onClick={props.onConfirm}>
+            Ok
+          </button>
+        </div>
       </StyledModal>
     </>
   );

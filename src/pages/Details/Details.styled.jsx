@@ -67,6 +67,7 @@ export const Header = styled.header`
     font-size: 2rem;
     @media (max-width: ${({ theme }) => theme.screen.sm}) {
       font-size: 1.4rem;
+      padding: 0 0.7rem;
     }
   }
 `;
