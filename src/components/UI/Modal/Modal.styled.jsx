@@ -2,38 +2,31 @@ import styled from "styled-components";
 
 const StyledModal = styled.div`
   /* ... */
-  & .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.75);
-  }
 
-  & .modal {
-    position: fixed;
-    top: 30vh;
-    left: 35%;
-    width: 25%;
-    z-index: 100;
-    margin: auto;
-    overflow: hidden;
-    background-color: ${({ theme }) => theme.colors.lightPrimary};
-    border-radius: 0.5rem;
+  /* position: fixed;
+  top: 30vh;
+  left: 35%;
+  width: 25%; */
+  position: relative;
+  top: 3rem;
+  left: 0;
+  max-width: 30rem;
+  z-index: 100;
+  margin: auto;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.colors.lightPrimary};
+  border-radius: 0.5rem;
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    width: 50vw;
+    min-width: 18rem;
+    text-align: center;
   }
-
-  & .header {
+  & h2 {
     background: #d00004;
     padding: 1rem;
-  }
-
-  & .header h2 {
     margin: 0;
     color: white;
   }
-
   & .content {
     padding: 1rem;
     font-size: 1.3rem;
@@ -50,10 +43,19 @@ const StyledModal = styled.div`
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1rem;
+    margin: 1rem;
     font-size: 1rem;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
   }
 `;
-
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+`;
 export default StyledModal;

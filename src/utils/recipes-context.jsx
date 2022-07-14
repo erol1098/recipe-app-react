@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const Recipes = createContext();
+const RecipesContext = createContext();
 
 export const RecipesProvider = (props) => {
   const [meals, setMeals] = useState(
@@ -9,7 +9,11 @@ export const RecipesProvider = (props) => {
 
   const values = { meals, setMeals };
 
-  return <Recipes.Provider value={values}>{props.children}</Recipes.Provider>;
+  return (
+    <RecipesContext.Provider value={values}>
+      {props.children}
+    </RecipesContext.Provider>
+  );
 };
 
-export default Recipes;
+export default RecipesContext;

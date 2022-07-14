@@ -2,7 +2,7 @@ import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
 import AuthContext from "../utils/auth-context";
 import Query from "../utils/query-context";
-import Recipes from "../utils/recipes";
+import Recipes from "../utils/recipes-context";
 
 const useHttp = () => {
   const { isLoggedIn } = useContext(AuthContext);

@@ -14,6 +14,8 @@ const StyledAuthForm = styled.form`
   background-color: ${({ theme }) => theme.colors.lightPrimary};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 0.3rem;
+  opacity: 0.95;
   & input {
     height: 2.5rem;
     width: 20rem;
@@ -47,8 +49,14 @@ const StyledAuthForm = styled.form`
     background-color: inherit;
   }
   & h2 {
+    color: ${({ theme }) => theme.colors.darkPrimary};
     margin-bottom: 1rem;
     text-decoration: underline;
+  }
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    width: 90%;
+    margin-top: 1rem;
+    max-width: 25rem;
   }
 `;
 

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import StyledDetail from "./Details.styled";
+import StyledDetail, { Nutrients, Header, Content } from "./Details.styled";
 import { Navigate, useParams } from "react-router-dom";
-import Recipes from "../../utils/recipes";
+import Recipes from "../../utils/recipes-context";
 import { useNavigate } from "react-router-dom";
 
 const Details = () => {
@@ -13,109 +13,48 @@ const Details = () => {
 
   const { CHOCDF, CHOLE, ENERC_KCAL, FAT, PROCNT, SUGAR, WATER } =
     meal.totalNutrients;
-
+  const nutrientList = [CHOCDF, CHOLE, ENERC_KCAL, FAT, PROCNT, SUGAR, WATER];
   return (
     <StyledDetail>
-      <div>
+      <Header>
         <p>{meal.label}</p>
-        <p>
-          {meal.cuisineType[0].replace(
-            meal.cuisineType[0][0],
-            meal.cuisineType[0][0].toUpperCase()
-          )}{" "}
-          Cuisine
-        </p>
-      </div>
-      <article>
-        <section>
+      </Header>
+
+      <Content>
+        <figure>
           <img src={meal.image} alt="dish" />
-          <ul>
-            <li
-              style={{
-                textDecoration: "underline",
-                textAlign: "center",
-                fontSize: "1.3rem",
-                marginBottom: "1rem",
-              }}
-            >
-              Nutrients
-            </li>
-            <li>
-              <span>{CHOCDF.label}</span>
-              {": "}
-              <span>
-                {Math.round(+CHOCDF.quantity)}
-                {CHOCDF.unit}
-              </span>
-            </li>
-            <li>
-              <span>{FAT.label}</span>
-              {": "}
-              <span>
-                {Math.round(+FAT.quantity)}
-                {FAT.unit}
-              </span>
-            </li>
-            <li>
-              <span>{CHOLE.label}</span>
-              {": "}
-              <span>
-                {Math.round(+CHOLE.quantity)}
-                {CHOLE.unit}
-              </span>
-            </li>
-            <li>
-              <span>{PROCNT.label}</span>
-              {": "}
-              <span>
-                {Math.round(+PROCNT.quantity)}
-                {PROCNT.unit}
-              </span>
-            </li>
-            <li>
-              <span>{SUGAR.label}</span>
-              {": "}
-              <span>
-                {Math.round(+SUGAR.quantity)}
-                {SUGAR.unit}
-              </span>
-            </li>
-            <li>
-              <span>{WATER.label}</span>
-              {": "}
-              <span>
-                {Math.round(+WATER.quantity)}
-                {WATER.unit}
-              </span>
-            </li>
-            <li>
-              <span>{ENERC_KCAL.label}</span>
-              {": "}
-              <span>
-                {Math.round(+ENERC_KCAL.quantity)}
-                {ENERC_KCAL.unit}
-              </span>
-            </li>
-          </ul>
-        </section>
+          <figcaption style={{ textAlign: "center", marginTop: "0.2rem" }}>
+            {meal.cuisineType[0].replace(
+              meal.cuisineType[0][0],
+              meal.cuisineType[0][0].toUpperCase()
+            )}
+            {"  Cuisine"}
+          </figcaption>
+        </figure>
         <ul>
-          <li
-            style={{
-              textDecoration: "underline",
-              textAlign: "center",
-              fontSize: "1.3rem",
-              marginBottom: "1rem",
-            }}
-          >
-            Ingredients
-          </li>
+          <li>Ingredients</li>
           {meal.ingredientLines.map((line, i) => (
             <li key={i}>
               {i + 1} - {line}
             </li>
           ))}
         </ul>
-      </article>
+      </Content>
+      <Nutrients>
+        <li>{"Nutrients : "}</li>
+        {nutrientList.map((nutrient) => {
+          const { label, quantity, unit } = nutrient;
+          return (
+            <li key={label}>
+              <span>{label}</span> {" : "}
+              <span>
+                {Math.round(+quantity)}
+                {unit}
+              </span>
+            </li>
+          );
+        })}
+      </Nutrients>
       <button onClick={() => navigate(-1)}>Back</button>
     </StyledDetail>
   );

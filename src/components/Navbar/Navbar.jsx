@@ -1,21 +1,40 @@
-import React, { useContext } from "react";
-import StyledNav, { Logo } from "./Navbar.styled";
+import React, { useContext, useState } from "react";
+import StyledNav, {
+  Logo,
+  Button,
+  Menu,
+  Hamburger,
+  Head,
+} from "./Navbar.styled";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import AuthContext from "../../utils/auth-context";
-import Recipes from "../../utils/recipes";
+import Recipes from "../../utils/recipes-context";
+import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
   const { setMeals } = useContext(Recipes);
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <StyledNav>
-      <NavLink to="/">
-        <div onClick={() => setMeals("")}>
-          <Logo src={logo} /> Recipe Master
-        </div>
-      </NavLink>
-      <ul>
+      <Head>
+        <NavLink to="/">
+          <span
+            onClick={() => {
+              setIsOpen(false);
+              setMeals("");
+            }}
+          >
+            <Logo src={logo} /> Recipe Master
+          </span>
+        </NavLink>
+        <Hamburger onClick={() => setIsOpen((prevState) => !prevState)}>
+          <GiHamburgerMenu />
+        </Hamburger>
+      </Head>
+      <Menu isOpen={isOpen} onClick={() => setIsOpen(false)}>
         <li>
           <NavLink to="about">About</NavLink>
         </li>
@@ -31,7 +50,7 @@ const Navbar = () => {
         <li>
           {!isLoggedIn && <NavLink to="login">Login</NavLink>}
           {isLoggedIn && (
-            <button
+            <Button
               onClick={() => {
                 navigate("/goodbye");
                 setMeals("");
@@ -39,10 +58,10 @@ const Navbar = () => {
               }}
             >
               Logout
-            </button>
+            </Button>
           )}
         </li>
-      </ul>
+      </Menu>
     </StyledNav>
   );
 };

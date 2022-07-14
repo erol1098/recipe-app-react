@@ -33,13 +33,10 @@ const AuthForm = () => {
           returnSecureToken: true,
         });
         setIsLoading(false);
-        // console.log(response);
         login(response.data.idToken, response.data.expiresIn);
       } catch (error) {
         setIsLoading(false);
         setError(error);
-
-        // alert(error.response.data.error.message || "Authentication Failed");
       }
     })();
   };

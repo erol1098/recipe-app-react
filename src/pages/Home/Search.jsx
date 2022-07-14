@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import StyledMain from "./Container.styled";
 import Spinner from "../../components/UI/Spinner/Spinner";
-import Recipes from "../../utils/recipes";
+import Recipes from "../../utils/recipes-context";
 import Query from "../../utils/query-context";
 import Card from "../../components/UI/Card/Card";
 

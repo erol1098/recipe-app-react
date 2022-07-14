@@ -6,8 +6,10 @@ import Spinner from "../Spinner/Spinner";
 
 const Card = (props) => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  function asyncImageLoader(url) {
+  //* For spinner while image is loading
+  const asyncImageLoader = (url) => {
     return new Promise((resolve, reject) => {
       setIsLoading(true);
       var image = new Image();
@@ -20,8 +22,7 @@ const Card = (props) => {
         reject(new Error("could not load image"));
       };
     });
-  }
-  const navigate = useNavigate();
+  };
   const { isLoggedIn } = useContext(AuthContext);
   const { label, image } = props;
 

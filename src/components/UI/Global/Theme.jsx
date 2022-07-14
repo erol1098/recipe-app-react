@@ -10,5 +10,8 @@ const theme = {
     dividerColor: "#e6e6e6",
     warningColor: "#E9A71A",
   },
+  screen: {
+    sm: "768px",
+  },
 };
 export default theme;

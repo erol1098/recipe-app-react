@@ -48,6 +48,17 @@ const StyledNotFound = styled.main`
     color: ${({ theme }) => theme.colors.warningColor};
     background-color: #fff;
   }
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    & h2 {
+      font-size: 3rem;
+    }
+    & h3 {
+      font-size: 2rem;
+    }
+    & button {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export default StyledNotFound;

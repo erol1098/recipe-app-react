@@ -12,7 +12,7 @@ font-family: 'Poppins', sans-serif;
 font-weight:bold;
 color: ${({ theme }) => theme.colors.primaryText};
 background-color: ${({ theme }) => theme.colors.accentColor};
-min-width:646px;
+/* min-width:646px; */
 
 }
 

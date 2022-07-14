@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-const Query = createContext();
+const QueryContext = createContext();
 export const QueryProvider = (props) => {
   const [mealType, setMealType] = useState("breakfast");
   const [query, setQuery] = useState("");
@@ -13,6 +13,10 @@ export const QueryProvider = (props) => {
     setIsLoading,
   };
 
-  return <Query.Provider value={values}>{props.children}</Query.Provider>;
+  return (
+    <QueryContext.Provider value={values}>
+      {props.children}
+    </QueryContext.Provider>
+  );
 };
-export default Query;
+export default QueryContext;

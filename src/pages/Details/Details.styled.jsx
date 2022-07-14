@@ -4,7 +4,6 @@ const StyledDetail = styled.section`
   /* ... */
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
@@ -12,37 +11,19 @@ const StyledDetail = styled.section`
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-  background-color: ${({ theme }) => theme.colors.lightPrimary};
+
   border-radius: 0.3rem;
-  & article {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-    border-top: 1px solid ${({ theme }) => theme.colors.secondaryText};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryText};
-    background-color: ${({ theme }) => theme.colors.dividerColor};
-  }
-  & div {
-    text-align: center;
-    padding: 1rem 0;
-  }
-  & div p {
-    font-size: 2rem;
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    width: 90%;
   }
   & ul {
-    padding: 0 0 0 3rem;
     list-style-type: none;
     line-height: 2rem;
   }
-  & section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  & li:first-child {
+    color: ${({ theme }) => theme.colors.darkPrimary};
+    text-decoration: underline;
   }
-
   & img {
     width: 20rem;
     border-radius: 0.3rem;
@@ -62,5 +43,53 @@ const StyledDetail = styled.section`
     color: ${({ theme }) => theme.colors.primaryText};
   }
 `;
+export const Nutrients = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: start;
+  column-gap: 1rem;
+  padding: 0.5rem 0;
 
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    padding: 0 0.5rem;
+  }
+`;
+export const Header = styled.header`
+  background-color: ${({ theme }) => theme.colors.lightPrimary};
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  & p {
+    font-size: 2rem;
+    @media (max-width: ${({ theme }) => theme.screen.sm}) {
+      font-size: 1.4rem;
+    }
+  }
+`;
+export const Content = styled.article`
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1rem;
+  border-top: 1px solid ${({ theme }) => theme.colors.secondaryText};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryText};
+  background-color: ${({ theme }) => theme.colors.dividerColor};
+  & li:first-child {
+    color: ${({ theme }) => theme.colors.darkPrimary};
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 export default StyledDetail;

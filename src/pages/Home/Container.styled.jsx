@@ -6,13 +6,25 @@ const StyledMain = styled.main`
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: ${({ theme }) => theme.colors.accentColor};
-  & img {
-    width: 80%;
-    display: block;
-    margin: auto;
+`;
+export const Image = styled.img`
+  width: 80%;
+  display: block;
+  margin: auto;
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    display: none;
   }
 `;
 
+export const Content = styled.p`
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin: auto;
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    font-size: 1rem;
+  }
+`;
 export default StyledMain;

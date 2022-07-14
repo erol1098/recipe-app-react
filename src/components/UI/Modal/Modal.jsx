@@ -1,25 +1,23 @@
 import React from "react";
-import StyledModal from "./Modal.styled";
+import StyledModal, { Backdrop } from "./Modal.styled";
 const Modal = (props) => {
   console.log("entered");
   return (
-    <StyledModal>
-      <div className="backdrop" onClick={props.onConfirm}></div>
-      <section className="modal">
-        <header className="header">
+    <>
+      <Backdrop onClick={props.onConfirm}></Backdrop>
+      <StyledModal>
+        <header>
           <h2>{props.title}</h2>
         </header>
-
         <div className="content">
           <p>{props.message.replace("_", " ")}</p>
         </div>
-        <div className="actions">
-          <button type="button" onClick={props.onConfirm}>
-            Ok
-          </button>
-        </div>
-      </section>
-    </StyledModal>
+
+        <button type="button" onClick={props.onConfirm}>
+          Ok
+        </button>
+      </StyledModal>
+    </>
   );
 };
 

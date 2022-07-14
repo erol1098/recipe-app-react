@@ -35,6 +35,14 @@ const StyledSection = styled.section`
   & .button-wrapper {
     height: 10%;
   }
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    width: 20rem;
+    height: 27rem;
+    padding: 2rem 0;
+    & > h2 {
+      height: auto;
+    }
+  }
 `;
 export const Image1 = styled.img`
   /* ... */
@@ -60,6 +68,9 @@ export const Button = styled.button`
     background-color: #fff;
     color: ${({ theme }) => theme.colors.darkPrimary};
     border: 1px solid ${({ theme }) => theme.colors.darkPrimary};
+  }
+  @media (max-width: ${({ theme }) => theme.screen.sm}) {
+    width: 208px;
   }
 `;
 
