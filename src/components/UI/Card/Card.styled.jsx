@@ -10,7 +10,7 @@ const StyledSection = styled.section`
   gap: 1rem;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  padding: 1rem;
+  padding: 2rem 1rem;
   border-radius: 0.3rem;
   width: 15rem;
   & h2 {

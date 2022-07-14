@@ -1,7 +1,6 @@
 import React from "react";
 import StyledModal, { Backdrop } from "./Modal.styled";
 const Modal = (props) => {
-  console.log("entered");
   return (
     <>
       <Backdrop onClick={props.onConfirm}></Backdrop>

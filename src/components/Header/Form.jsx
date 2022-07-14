@@ -33,6 +33,7 @@ const Form = () => {
           id="query"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          placeholder="Enter a keyword..."
           required
         />
         <select

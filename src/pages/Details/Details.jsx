@@ -19,7 +19,6 @@ const Details = () => {
       <Header>
         <p>{meal.label}</p>
       </Header>
-
       <Content>
         <figure>
           <img src={meal.image} alt="dish" />

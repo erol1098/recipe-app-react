@@ -10,10 +10,8 @@ const useHttp = () => {
   const { setIsLoading } = useContext(Query);
   const [error, setError] = useState(null);
 
-  // const APP_KEY = useMemo(() => process.env.REACT_APP_APP_KEY, []);
-  // const APP_ID = useMemo(() => process.env.REACT_APP_APP_ID, []);
-  const APP_KEY = "b1af8e05eb283a3fda86704ae725708a";
-  const APP_ID = "9bdb283e";
+  const APP_KEY = process.env.REACT_APP_APP_KEY;
+  const APP_ID = process.env.REACT_APP_APP_ID;
 
   useEffect(() => {
     isLoggedIn && localStorage.setItem("savedList", JSON.stringify(meals));
@@ -24,10 +22,10 @@ const useHttp = () => {
       setIsLoading(1);
       setError(null);
       try {
-        const res = await axios.get(
+        const { data } = await axios.get(
           `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`
         );
-        setMeals(res.data.hits);
+        setMeals(data.hits);
       } catch (error) {
         setError(error.message || "Something went wrong!");
       }

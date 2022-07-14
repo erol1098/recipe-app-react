@@ -8,7 +8,7 @@ import Card from "../../components/UI/Card/Card";
 const Search = () => {
   const { meals } = useContext(Recipes);
   const { isLoading } = useContext(Query);
-  if (meals?.length === 0 && meals) {
+  if (meals?.length === 0) {
     return (
       <p
         style={{
@@ -23,13 +23,11 @@ const Search = () => {
   if (isLoading) {
     return <Spinner />;
   }
-
   return (
     <StyledMain>
-      {meals?.map((meal) => {
-        const { label, image, calories } = meal.recipe;
-        return <Card key={calories} label={label} image={image} />;
-      })}
+      {meals?.map(({ recipe: { label, image, calories } }) => (
+        <Card key={calories} label={label} image={image} />
+      ))}
     </StyledMain>
   );
 };
